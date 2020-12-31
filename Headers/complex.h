@@ -7,20 +7,18 @@ class complex{
         float img;
 
     protected:
-        void free_up(void **ptr) {delete ptr; *ptr = nullptr; };
 
     public:
         // constructors and destructors
-        complex(float real = 0, float img = 0) throw(int);
-        complex(complex &COMP) throw(int);
-        ~complex() {delete this; };
+        complex(float real = 0, float img = 0);
+        complex(complex &COMP);
+        ~complex() {;}
 
         // get and set method
-        void img_set(float) throw(int);
-        void real_set(float) throw(int);
-        float img_get();
-        float real_get();
-
+        void img_set(float img) {this->img = img; }
+        void real_set(float real) {this->real = real; }
+        float img_get() {return this->img; }
+        float real_get() {return this->real; }
         
 };
 
