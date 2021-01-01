@@ -1,25 +1,86 @@
-#ifndef COMPLEX
-#define COMPLEX
+#include <string>
+#include <iostream>
+#include <cmath>
 
 class complex{
     private:
         float real;
         float img;
 
-    protected:
 
     public:
         // constructors and destructors
-        complex(float real = 0, float img = 0);
-        complex(complex &COMP);
-        ~complex() {;}
+        inline complex(float real = 0, float img = 0);
+        inline complex(complex &COMP);
+        inline ~complex() {;}
+
 
         // get and set method
         void img_set(float img) {this->img = img; }
         void real_set(float real) {this->real = real; }
-        float img_get() {return this->img; }
-        float real_get() {return this->real; }
-        
-};
+        float img_get() const {return this->img; }
+        float real_get() const {return this->real; }
 
-#endif //COMPLEX
+        
+        // operator -- complex with complex
+        inline friend complex operator +(complex, complex);
+        inline friend complex operator -(complex, complex);
+        inline friend complex operator *(complex, complex);
+        inline friend complex operator /(complex, complex);
+
+        // operator -- complex
+        inline friend complex operator +=(complex &, complex);
+        inline friend complex operator -=(complex &, complex);
+        inline friend complex operator *=(complex &, complex);
+        inline friend complex operator /=(complex &, complex);
+
+        // operator -- complex '++' '--'
+        inline friend complex operator ++(complex &);
+        inline friend complex operator --(complex &);
+
+        // operator -- complex with complex conditons
+        inline friend complex operator ==(complex, complex);
+        inline friend complex operator !=(complex, complex);
+        inline friend complex operator >(complex, complex);
+        inline friend complex operator >=(complex, complex);
+        inline friend complex operator <(complex, complex);
+        inline friend complex operator <=(complex, complex);
+        inline friend complex operator !(complex);
+
+        // operator -- complex with float
+        inline friend complex operator +(complex, float);
+        inline friend complex operator -(complex, float);
+        inline friend complex operator *(complex, float);
+        inline friend complex operator /(complex, float);
+        inline friend complex operator +=(complex, float);
+        inline friend complex operator -=(complex, float);
+        inline friend complex operator *=(complex, float);
+        inline friend complex operator /=(complex, float);
+
+        // operator -- float with complex ! return COMPLEX
+        inline friend complex operator +(float, complex);
+        inline friend complex operator -(float, complex);
+        inline friend complex operator *(float, complex);
+        inline friend complex operator /(float, complex);
+
+        // operator -- complex with string
+        inline friend complex operator +(complex, std::string);
+        inline friend complex operator -(complex, std::string);
+        inline friend complex operator *(complex, std::string);
+        inline friend complex operator /(complex, std::string);
+        inline friend complex operator +=(complex, std::string);
+        inline friend complex operator -=(complex, std::string);
+        inline friend complex operator *=(complex, std::string);
+        inline friend complex operator /=(complex, std::string);
+
+        // operator -- string with complex 
+        inline friend complex operator +(std::string, complex);
+        inline friend complex operator -(std::string, complex);
+        inline friend complex operator *(std::string, complex);
+        inline friend complex operator /(std::string, complex);
+
+        // istream & ostream operator
+        inline friend std::istream &operator >>(std::istream &, complex &) throw(int);
+        inline friend std::ostream &operator <<(std::ostream &, complex &);
+        inline friend std::ostream &operator <<(std::ostream &, complex &);
+};
