@@ -2,19 +2,6 @@
 #define COMPLEX
 #include "../Headers/complex.h"
 
-// constructor for complex object
-complex::complex(float real, float img){
-    this->real = real;
-    this->img = img;
-}
-
-
-// copy constructor for the complex object
-complex::complex(complex &COMP){
-    this->real = COMP.real;
-    this->img = COMP.img;
-}
-
 
 // operator -- complex with complex
 complex operator +(complex COM1, complex COM2) {
@@ -37,11 +24,11 @@ complex operator *(complex COM1, complex COM2) {
 }
 complex operator /(complex COM1, complex COM2) {
     complex temp(0, 0);
-    float temp_data = (COM2.real * COM2.real) + (COM2.img * COM2.img);
-    temp.real = (COM1.real * COM2.real) + (COM1.img * COM2.img);
-    temp.img = (COM1.real * COM2.img) * (-1) * (COM1.img * COM2.real);
-    temp.real /= temp_data;
-    temp.img /= temp_data;
+    float num_temp = (COM2.real * COM2.real) + (COM2.img * COM2.img);
+    COM2.img *= -1;
+    temp = COM1 * COM2;
+    temp.real /= num_temp;
+    temp.img /= num_temp;
     return temp;
 }
 
@@ -72,20 +59,7 @@ complex operator /=(complex &COM1, complex COM2) {
 }
 
 
-// operator -- complex '++' '--'
-complex operator ++(complex &COM) {
-    COM.real++;
-    COM.img++;
-    return COM;
-}
-complex operator --(complex &COM) {
-    COM.real--;
-    COM.img--;
-    return COM;
-}
-
-
-// istream & ostream operator
+// istream operator
 // stdin 3 -- 3.1 -- +3.4 -- -3.8 -- i5 -- i5.1 -- +i12 -- -i5.2
 // stdin 3 +i2 -- 3.5 -i6.1
 std::istream &operator >>(std::istream &in, complex &COM) throw(int){

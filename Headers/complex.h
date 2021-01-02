@@ -10,8 +10,10 @@ class complex{
 
     public:
         // constructors and destructors
-        inline complex(float real = 0, float img = 0);
-        inline complex(complex &COMP);
+        inline complex(float real = 0, float img = 0) :real(real), img(img) {;}
+        inline complex() :real(0), img(0) {;}
+        inline complex(complex &COM) :real(COM.real), img(COM.img) {;}
+        inline complex(const complex& COM) {operator= (COM);}
         inline ~complex() {;}
 
 
@@ -35,8 +37,7 @@ class complex{
         inline friend complex operator /=(complex &, complex);
 
         // operator -- complex '++' '--'
-        inline friend complex operator ++(complex &);
-        inline friend complex operator --(complex &);
+        // NULL OPERATOR
 
         // operator -- complex with complex conditons
         inline friend complex operator ==(complex, complex);
