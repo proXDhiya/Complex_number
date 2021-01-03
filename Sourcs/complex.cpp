@@ -44,16 +44,19 @@ complex operator -=(complex &COM1, complex COM2) {
     return COM1;
 }
 complex operator *=(complex &COM1, complex COM2) {
-    COM1.real = (COM1.real * COM2.real) - (COM1.img * COM2.img);
-    COM1.img = (COM1.real * COM2.img) + (COM1.img * COM2.real);
+    complex temp;
+    temp.real = (COM1.real * COM2.real) - (COM1.img * COM2.img);
+    temp.img = (COM1.real * COM2.img) + (COM1.img * COM2.real);
+    COM1 = temp;
     return COM1;
 }
 complex operator /=(complex &COM1, complex COM2) {
-    float temp_data = (COM2.real * COM2.real) + (COM2.img * COM2.img);
-    COM1.real = (COM1.real * COM2.real) + (COM1.img * COM2.img);
-    COM1.img = (COM1.real * COM2.img) * (-1) * (COM1.img * COM2.real);
-    COM1.real /= temp_data;
-    COM1.img /= temp_data;
+    complex temp;
+    float num_temp = (COM2.real * COM2.real + COM2.img * COM2.img);
+    COM2.img *= (-1);
+    temp.real = (COM1.real * COM2.real - COM1.img * COM2.img) / num_temp;
+    temp.img = (COM1.real * COM2.img + COM1.img * COM2.real) / num_temp;
+    COM1 = temp;
     return COM1;
 }
 
