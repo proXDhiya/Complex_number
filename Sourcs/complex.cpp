@@ -24,11 +24,10 @@ complex operator *(complex COM1, complex COM2) {
 }
 complex operator /(complex COM1, complex COM2) {
     complex temp(0, 0);
-    float num_temp = (COM2.real * COM2.real) + (COM2.img * COM2.img);
-    COM2.img *= -1;
-    temp = COM1 * COM2;
-    temp.real /= num_temp;
-    temp.img /= num_temp;
+    float num_temp = (COM2.real * COM2.real + COM2.img * COM2.img);
+    COM2.img *= (-1);
+    temp.real = (COM1.real * COM2.real - COM1.img * COM2.img) / num_temp;
+    temp.img = (COM1.real * COM2.img + COM1.img * COM2.real) / num_temp;
     return temp;
 }
 

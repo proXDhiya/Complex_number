@@ -11,8 +11,8 @@ int main() {
 
 
     // operator +
-    complex test1(3, 1);
-    complex test2(5, 2);
+    complex test1(1, 2);
+    complex test2(2, 6);
     complex sum = test1 + test2;
     std::cout << "print the SUM of two complex object! ~~> "
     << sum << std::endl;
@@ -32,8 +32,7 @@ int main() {
 
     // operator / MATH ERROR HERE!
     sum = test2 / test1;
-    std::cout << "print the DIVISION of two complex object! ~~> "
-    << sum << "   We Got ERROR!" << std::endl;
+    std::cout << "print the DIVISION of two complex object! ~~>" << std::endl;
 
     // operator +=
     sum = test1;
@@ -51,5 +50,9 @@ int main() {
     sum = test1;
     sum *= test1;
     std::cout << "sum = " << sum << std::endl;
+
+
+    std::cin >> sum;
+    std::cout << sum << std::endl;
     return 0;
 }

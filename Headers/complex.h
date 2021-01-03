@@ -11,7 +11,6 @@ class complex{
     public:
         // constructors and destructors
         inline complex(float real = 0, float img = 0) :real(real), img(img) {;}
-        inline complex() :real(0), img(0) {;}
         inline complex(complex &COM) :real(COM.real), img(COM.img) {;}
         inline complex(const complex& COM) {operator= (COM);}
         inline ~complex() {;}
@@ -82,6 +81,5 @@ class complex{
 
         // istream & ostream operator
         inline friend std::istream &operator >>(std::istream &, complex &) throw(int);
-        inline friend std::ostream &operator <<(std::ostream &, complex &);
         inline friend std::ostream &operator <<(std::ostream &, complex &);
 };
