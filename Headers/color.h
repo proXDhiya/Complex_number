@@ -1,5 +1,3 @@
-#ifdef CONSOLE_COLOR
-#define CONSOLE_COLOR
 #include <string>
 
 std::string BLACK("\033[0;30m");
@@ -18,13 +16,13 @@ std::string GREEN_BG("\033[0;42m");
 std::string BOLD_GREEN_BG("\033[1;42m");
 
 std::string YELLOW("\033[0;33m");
-std::string BOLD_YWLLOW("\033[1;33m");
+std::string BOLD_YELLOW("\033[1;33m");
 std::string YELLOW_BG("\033[0;43m");
 std::string BOLD_YELLOW_BG("\033[1;43m");
 
 std::string BLEU("\033[0;34m");
 std::string BOLD_BLEU("\033[1;34m");
-std::String BLEU_BG("\033[0;44m");
+std::string BLEU_BG("\033[0;44m");
 std::string BOLD_BLEU_BG("\033[1;44m");
 
 std::string MAGENTA("\033[0;35m");
@@ -33,7 +31,7 @@ std::string MAGENTA_BG("\033[0;45m");
 std::string BOLD_MAGENTA_BG("\033[1;45m");
 
 std::string CYAN("\033[0;36m");
-std::String BOLD_CYAN("\033[1;36m");
+std::string BOLD_CYAN("\033[1;36m");
 std::string CYAN_BG("\033[0;46m");
 std::string BOLD_CYAN_BG("\033[1;46m");
 
@@ -49,5 +47,3 @@ std::string COLOR_BOLD_ON("\033[1m");
 std::string COLOR_BOLD_OFF("\033[21m");
 std::string COLOR_ENDERLINE_ON("\033[4m");
 std::string COlOR_ENDERLINE_OFF("\033[24m");
-
-#endif //CONSOLE_COLOR!
