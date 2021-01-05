@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <cmath>
+#include "color.h"
 
 class complex{
     private:
@@ -12,7 +13,7 @@ class complex{
         // constructors and destructors
         inline complex(float real = 0, float img = 0) :real(real), img(img) {;}
         inline complex(complex &COM) :real(COM.real), img(COM.img) {;}
-        inline complex(const complex& COM) {operator= (COM);}
+        inline complex(const complex &COM) {operator= (COM);}
         inline ~complex() {;}
 
 
@@ -36,6 +37,8 @@ class complex{
         inline friend complex operator /=(complex &, complex);
 
         // operator -- complex '++' '--'
+        inline friend complex operator++(complex &);
+        inline friend complex operator--(complex &);
         // NULL OPERATOR
 
         // operator -- complex with complex conditons
@@ -80,6 +83,6 @@ class complex{
         inline friend complex operator /(std::string, complex);
 
         // istream & ostream operator
-        inline friend std::istream &operator >>(std::istream &, complex &) throw(int);
+        inline friend std::istream &operator >>(std::istream &, complex &);
         inline friend std::ostream &operator <<(std::ostream &, complex &);
 };
