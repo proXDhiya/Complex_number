@@ -46,4 +46,4 @@ std::string COLOR_INVERSE_OFF("\033[27m");
 std::string COLOR_BOLD_ON("\033[1m");
 std::string COLOR_BOLD_OFF("\033[21m");
 std::string COLOR_ENDERLINE_ON("\033[4m");
-std::string COlOR_ENDERLINE_OFF("\033[24m");
+std::string COLOR_ENDERLINE_OFF("\033[24m");
