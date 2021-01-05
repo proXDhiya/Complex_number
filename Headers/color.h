@@ -1,49 +1,47 @@
-#include <string>
+char BLACK[8]("\033[0;30m");
+char BOLD_BLACK[8]("\033[1;30m");
+char BLACK_BG[8]("\033[0;40m");
+char BOLD_BLACK_BG[8]("\033[1;40m");
 
-std::string BLACK("\033[0;30m");
-std::string BOLD_BLACK("\033[1;30m");
-std::string BLACK_BG("\033[0;40m");
-std::string BOLD_BLACK_BG("\033[1;40m");
+char RED[8]("\033[0;31m");
+char BOLD_RED[8]("\033[1;31m");
+char RED_BG[8]("\033[0;41m");
+char BOLD_RED_BG[8]("\033[1;41m");
 
-std::string RED("\033[0;31m");
-std::string BOLD_RED("\033[1;31m");
-std::string RED_BG("\033[0;41m");
-std::string BOLD_RED_BG("\033[1;41m");
+char GREEN[8]("\033[0;32m");
+char BOLD_GREEN[8]("\033[1;32m");
+char GREEN_BG[8]("\033[0;42m");
+char BOLD_GREEN_BG[8]("\033[1;42m");
 
-std::string GREEN("\033[0;32m");
-std::string BOLD_GREEN("\033[1;32m");
-std::string GREEN_BG("\033[0;42m");
-std::string BOLD_GREEN_BG("\033[1;42m");
+char YELLOW[8]("\033[0;33m");
+char BOLD_YELLOW[8]("\033[1;33m");
+char YELLOW_BG[8]("\033[0;43m");
+char BOLD_YELLOW_BG[8]("\033[1;43m");
 
-std::string YELLOW("\033[0;33m");
-std::string BOLD_YELLOW("\033[1;33m");
-std::string YELLOW_BG("\033[0;43m");
-std::string BOLD_YELLOW_BG("\033[1;43m");
+char BLEU[8]("\033[0;34m");
+char BOLD_BLEU[8]("\033[1;34m");
+char BLEU_BG[8]("\033[0;44m");
+char BOLD_BLEU_BG[8]("\033[1;44m");
 
-std::string BLEU("\033[0;34m");
-std::string BOLD_BLEU("\033[1;34m");
-std::string BLEU_BG("\033[0;44m");
-std::string BOLD_BLEU_BG("\033[1;44m");
+char MAGENTA[8]("\033[0;35m");
+char BOLD_MAGENTA[8]("\033[1;35m");
+char MAGENTA_BG[8]("\033[0;45m");
+char BOLD_MAGENTA_BG[8]("\033[1;45m");
 
-std::string MAGENTA("\033[0;35m");
-std::string BOLD_MAGENTA("\033[1;35m");
-std::string MAGENTA_BG("\033[0;45m");
-std::string BOLD_MAGENTA_BG("\033[1;45m");
+char CYAN[8]("\033[0;36m");
+char BOLD_CYAN[8]("\033[1;36m");
+char CYAN_BG[8]("\033[0;46m");
+char BOLD_CYAN_BG[8]("\033[1;46m");
 
-std::string CYAN("\033[0;36m");
-std::string BOLD_CYAN("\033[1;36m");
-std::string CYAN_BG("\033[0;46m");
-std::string BOLD_CYAN_BG("\033[1;46m");
+char WHITE[8]("\033[0;37m");
+char BOLD_WHITE[8]("\033[1;37m");
+char WHITE_BG[8]("\033[0;47m");
+char BOLD_WHITE_BG[8]("\033[1;47m");
 
-std::string WHITE("\033[0;37m");
-std::string BOLD_WHITE("\033[1;37m");
-std::string WHITE_BG("\033[0;47m");
-std::string BOLD_WHITE_BG("\033[1;47m");
-
-std::string COLOR_RESET("\033[0m");
-std::string COLOR_INVRRSE_ON("\033[7m");
-std::string COLOR_INVERSE_OFF("\033[27m");
-std::string COLOR_BOLD_ON("\033[1m");
-std::string COLOR_BOLD_OFF("\033[21m");
-std::string COLOR_ENDERLINE_ON("\033[4m");
-std::string COLOR_ENDERLINE_OFF("\033[24m");
+char COLOR_RESET[8]("\033[0m");
+char COLOR_INVRRSE_ON[8]("\033[7m");
+char COLOR_INVERSE_OFF[8]("\033[27m");
+char COLOR_BOLD_ON[8]("\033[1m");
+char COLOR_BOLD_OFF[8]("\033[21m");
+char COLOR_ENDERLINE_ON[8]("\033[4m");
+char COLOR_ENDERLINE_OFF[8]("\033[24m");
