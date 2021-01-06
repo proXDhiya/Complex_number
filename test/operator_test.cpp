@@ -48,7 +48,7 @@ int main() {
     << BOLD_BLEU << "operator += -= *= /="
     << BOLD_YELLOW << " -----------" << std::endl;
 
-
+    
     // operator +=
     temp = num1;    //temp = (2 + 5i)
     temp += num2;   //temp + (1 + 3i)
@@ -156,8 +156,43 @@ int main() {
     << std::setw(14) << BOLD_YELLOW << "|" << std::endl
     << "--------------------------------------------" << std::endl << std::endl;
 
-
     
+    std::cout << BOLD_YELLOW << "-------- "
+    << BOLD_BLEU << "operator complex with float"
+    << BOLD_YELLOW << " -------" << std::endl;
 
+
+    // complex + float
+    float var = 5;
+    temp = num1 + var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 + var "
+    << std::setw(15) << temp
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex - float
+    temp = num1 - var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 - var "
+    << std::setw(14) << temp
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex * lfoat
+    temp = num1 * var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 * var "
+    << std::setw(14) << temp
+    << std::setw(12) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex / float
+    temp = num1 / var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 / var "
+    << std::setw(13) << temp
+    << std::setw(13) <<  BOLD_YELLOW << "|" << std::endl
+    << "--------------------------------------------" << std::endl << std::endl;
     return 0;
 }
