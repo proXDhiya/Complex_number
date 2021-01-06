@@ -38,19 +38,19 @@ complex operator+=(complex &COM1, complex COM2) {
     COM1.img += COM2.img;
     return COM1;
 }
-complex operator-=(complex &COM1, complex COM2) {
+complex operator-=(complex& COM1, complex COM2) {
     COM1.real -= COM2.real;
     COM1.img -= COM2.img;
     return COM1;
 }
-complex operator*=(complex &COM1, complex COM2) {
+complex operator*=(complex& COM1, complex COM2) {
     complex temp;
     temp.real = (COM1.real * COM2.real) - (COM1.img * COM2.img);
     temp.img = (COM1.real * COM2.img) + (COM1.img * COM2.real);
     COM1 = temp;
     return COM1;
 }
-complex operator/=(complex &COM1, complex COM2) {
+complex operator/=(complex& COM1, complex COM2) {
     complex temp;
     float num_temp = (COM2.real * COM2.real + COM2.img * COM2.img);
     COM2.img *= (-1);
@@ -62,16 +62,171 @@ complex operator/=(complex &COM1, complex COM2) {
 
 
 // opearator -- complex '++' '--'
-complex operator++(complex &COM) {
+complex operator++(complex& COM) {
     COM.real++;
     COM.img++;
     return COM;
 }
-complex operator --(complex &COM) {
+complex operator--(complex& COM) {
     COM.real--;
     COM.img--;
     return COM;
 }
+
+
+// bool operator '==' '!=' '>' '>=' '<' '<='
+bool operator==(const complex& COM1, const complex& COM2) {
+    return (COM1.real == COM2.real && COM1.img == COM2.img) ? true : false;
+}
+bool operator!=(const complex& COM1, const complex& COM2) {
+    return (COM1.real != COM2.real || COM1.img != COM2.img) ? true : false;
+}
+bool operator>(const complex& COM1, const complex& COM2) {
+    return (COM1.real > COM2.real) ? true : (COM1.real == COM2.real && COM1.img > COM2.img) ? true : false;
+}
+bool operator>=(const complex& COM1, const complex& COM2) {
+    return (COM1 == COM2) ? true : (COM1.real > COM2.real) ? true : (COM1.real == COM2.real && COM1.img > COM2.img) ? true : false;
+}
+bool operator<(const complex& COM1, const complex& COM2) {
+    return (COM1.real < COM2.real) ? true : (COM1.real == COM2.real && COM1.img < COM2.img) ? true : false;
+}
+bool operator<=(const complex& COM1, const complex& COM2) {
+    return (COM1 == COM2) ? true : (COM1.real < COM2.real) ? true : (COM1.real == COM2.real && COM1.img < COM2.img) ? true : false;
+}
+
+
+// operator '+' '-' '*' '/' '+=' '-=' '*=' '/='
+// complex with float -- return complex object
+complex operator+(complex COM, float var) {
+    COM.real += var;
+    return COM;
+}
+complex operator-(complex COM, float var) {
+    COM.real -= var;
+    return COM;
+}
+complex operator*(complex COM, float var) {
+    COM.real *= var;
+    COM.img *= var;
+    return COM;
+}
+complex operator/(complex COM, float var) {
+    COM.real /= var;
+    COM.img /= var;
+    return COM;
+}
+complex operator+=(complex& COM, float var) {
+    COM.real += var;
+    return COM;
+}
+complex operator-=(complex& COM, float var) {
+    COM.real -= var;
+    return COM;
+}
+complex operator*=(complex& COM, float var) {
+    COM.real *= var;
+    COM.img *= var;
+    return COM;
+}
+complex operator/=(complex& COM, float var) {
+    COM.real /= var;
+    COM.img /= var;
+    return COM;
+}
+
+
+// operator '+' '-' '*' '/'
+// float with complex return complex
+complex operator+(float var, complex COM) {
+    COM.real += var;
+    return COM;
+}
+complex operator-(float var, complex COM) {
+    COM.real -= var;
+    return COM;
+}
+complex operator*(float var, complex COM) {
+    COM.real *= var;
+    COM.img *= var;
+    return COM;
+}
+complex operator/(float var, complex COM) {
+    COM.real /= var;
+    COM.img /= var;
+    return COM;
+}
+
+
+// operator '+' '-' '*' '/' '+=' '-=' '*=' '/='
+// complex with string return complex
+complex operator+(complex COM, std::string var) {
+    COM.img += stof(var);
+    return COM;
+}
+complex operator-(complex COM, std::string var) {
+    COM.img -= stof(var);
+    return COM;
+}
+complex operator*(complex COM, std::string var) {
+    complex temp = {0};
+    temp.real = COM.img * stof(var) * (-1);
+    temp.img = COM.real * stof(var);
+    return temp;
+}
+complex operator/(complex COM, std::string var) {
+    complex temp = {0};
+    temp.real = (COM.img * stof(var)) / (stof(var) * stof(var));
+    temp.img = (COM.real * stof(var) * (-1)) / (stof(var) * stof(var));
+    return temp;
+}
+complex operator+=(complex& COM, std::string var) {
+    COM.img += stof(var);
+    return COM;
+}
+complex operator-=(complex& COM, std::string var) {
+    COM.img -= stof(var);
+    return COM;
+}
+complex operator*=(complex& COM, std::string var) {
+    complex temp = {0};
+    temp.real = COM.img * stof(var) * (-1);
+    temp.img = COM.real * stof(var);
+    COM = temp;
+    return COM;
+}
+complex operator/=(complex& COM, std::string var) {
+    complex temp = {0};
+    temp.real = (COM.img * stof(var)) / (stof(var) * stof(var));
+    temp.img = (COM.real * stof(var) * (-1)) / (stof(var) * stof(var));
+    COM = temp;
+    return COM;
+}
+
+
+// operator '+''-' '*' '/'
+// string with complex return complex
+complex operator+(std::string var, complex COM) {
+    COM.img += stof(var);
+    return COM;
+}
+complex operator-(std::string var, complex COM) {
+    COM.img -= stof(var);
+    return COM;
+}
+complex operator*(std::string var, complex COM) {
+    complex temp = {0};
+    temp.real = COM.img * stof(var) * (-1);
+    temp.img = COM.real * stof(var);
+    return temp;
+}
+complex operator/(std::string var, complex COM) {
+    complex temp = {0};
+    temp.real = (COM.img * stof(var)) / (stof(var) * stof(var));
+    temp.img = (COM.real * stof(var) * (-1)) / (stof(var) * stof(var));
+    return temp;
+}
+
+
 // istream operator
 // stdin 3 -- 3.1 -- +3.4 -- -3.8 -- i5 -- i5.1 -- +i12 -- -i5.2
 // stdin 3 +i2 -- 3.5 -i6.1

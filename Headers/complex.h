@@ -25,16 +25,16 @@ class complex{
 
         
         // operator -- complex with complex
-        inline friend complex operator +(complex, complex);
-        inline friend complex operator -(complex, complex);
-        inline friend complex operator *(complex, complex);
-        inline friend complex operator /(complex, complex);
+        inline friend complex operator+(complex, complex);
+        inline friend complex operator-(complex, complex);
+        inline friend complex operator*(complex, complex);
+        inline friend complex operator/(complex, complex);
 
         // operator -- complex
-        inline friend complex operator +=(complex &, complex);
-        inline friend complex operator -=(complex &, complex);
-        inline friend complex operator *=(complex &, complex);
-        inline friend complex operator /=(complex &, complex);
+        inline friend complex operator+=(complex &, complex);
+        inline friend complex operator-=(complex &, complex);
+        inline friend complex operator*=(complex &, complex);
+        inline friend complex operator/=(complex &, complex);
 
         // operator -- complex '++' '--'
         inline friend complex operator++(complex &);
@@ -42,47 +42,46 @@ class complex{
         // NULL OPERATOR
 
         // operator -- complex with complex conditons
-        inline friend complex operator ==(complex, complex);
-        inline friend complex operator !=(complex, complex);
-        inline friend complex operator >(complex, complex);
-        inline friend complex operator >=(complex, complex);
-        inline friend complex operator <(complex, complex);
-        inline friend complex operator <=(complex, complex);
-        inline friend complex operator !(complex);
+        inline friend bool operator==(const complex&, const complex&);
+        inline friend bool operator!=(const complex&, const complex&);
+        inline friend bool operator>(const complex&, const complex&);
+        inline friend bool operator>=(const complex&, const complex&);
+        inline friend bool operator<(const complex&, const complex&);
+        inline friend bool operator<=(const complex&, const complex&);
 
         // operator -- complex with float
-        inline friend complex operator +(complex, float);
-        inline friend complex operator -(complex, float);
-        inline friend complex operator *(complex, float);
-        inline friend complex operator /(complex, float);
-        inline friend complex operator +=(complex, float);
-        inline friend complex operator -=(complex, float);
-        inline friend complex operator *=(complex, float);
-        inline friend complex operator /=(complex, float);
+        inline friend complex operator+(complex, float);
+        inline friend complex operator-(complex, float);
+        inline friend complex operator*(complex, float);
+        inline friend complex operator/(complex, float);
+        inline friend complex operator+=(complex&, float);
+        inline friend complex operator-=(complex&, float);
+        inline friend complex operator*=(complex&, float);
+        inline friend complex operator/=(complex&, float);
 
         // operator -- float with complex ! return COMPLEX
-        inline friend complex operator +(float, complex);
-        inline friend complex operator -(float, complex);
-        inline friend complex operator *(float, complex);
-        inline friend complex operator /(float, complex);
+        inline friend complex operator+(float, complex);
+        inline friend complex operator-(float, complex);
+        inline friend complex operator*(float, complex);
+        inline friend complex operator/(float, complex);
 
         // operator -- complex with string
-        inline friend complex operator +(complex, std::string);
-        inline friend complex operator -(complex, std::string);
-        inline friend complex operator *(complex, std::string);
-        inline friend complex operator /(complex, std::string);
-        inline friend complex operator +=(complex, std::string);
-        inline friend complex operator -=(complex, std::string);
-        inline friend complex operator *=(complex, std::string);
-        inline friend complex operator /=(complex, std::string);
+        inline friend complex operator+(complex, std::string);
+        inline friend complex operator-(complex, std::string);
+        inline friend complex operator*(complex, std::string);
+        inline friend complex operator/(complex, std::string);
+        inline friend complex operator+=(complex&, std::string);
+        inline friend complex operator-=(complex&, std::string);
+        inline friend complex operator*=(complex&, std::string);
+        inline friend complex operator/=(complex&, std::string);
 
         // operator -- string with complex 
-        inline friend complex operator +(std::string, complex);
-        inline friend complex operator -(std::string, complex);
-        inline friend complex operator *(std::string, complex);
-        inline friend complex operator /(std::string, complex);
+        inline friend complex operator+(std::string, complex);
+        inline friend complex operator-(std::string, complex);
+        inline friend complex operator*(std::string, complex);
+        inline friend complex operator/(std::string, complex);
 
         // istream & ostream operator
-        inline friend std::istream &operator >>(std::istream &, complex &);
-        inline friend std::ostream &operator <<(std::ostream &, complex &);
+        inline friend std::istream &operator>>(std::istream &, complex &);
+        inline friend std::ostream &operator<<(std::ostream &, complex &);
 };
