@@ -179,7 +179,7 @@ int main() {
     << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
 
 
-    // complex * lfoat
+    // complex * float
     temp = num1 * var;
     std::cout << "|    " << WHITE
     << std::setw(9) << "temp = num1 * var "
@@ -192,7 +192,194 @@ int main() {
     std::cout << "|    " << WHITE
     << std::setw(9) << "temp = num1 / var "
     << std::setw(13) << temp
-    << std::setw(13) <<  BOLD_YELLOW << "|" << std::endl
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex += float
+    temp = num1;
+    temp += var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp += var "
+    << std::setw(21) << temp
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex -= float
+    temp = num1;
+    temp -= var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp -= var "
+    << std::setw(20) << temp
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex *= float
+    temp = num1;
+    temp *= var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp *= var "
+    << std::setw(20) << temp
+    << std::setw(12) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex /= float
+    temp = num1;
+    temp /= var;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp /= var "
+    << std::setw(19) << temp
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl
+    << "--------------------------------------------" << std::endl << std::endl;
+
+
+    std::cout << BOLD_YELLOW << "-------- "
+    << BOLD_BLEU << "operator float with complex"
+    << BOLD_YELLOW << " -------" << std::endl;
+
+
+    // float + complex
+    temp = var + num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = var + num1 "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // float - complex
+    temp = var - num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = var - num1 "
+    << std::setw(13) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // float * complex
+    temp = var * num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = var * num1 "
+    << std::setw(13) << temp
+    << std::setw(13) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // float / complex
+    temp = var / num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = var / num1 "
+    << std::setw(12) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl
+    << "--------------------------------------------" << std::endl << std::endl;
+
+
+    std::cout << BOLD_YELLOW << "------- "
+    << BOLD_BLEU << "operator complex with string"
+    << BOLD_YELLOW << " -------" << std::endl;
+
+
+    // complex + string
+    std::string str = "1i";
+    temp = num1 + str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 + str "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex - string
+    temp = num1 - str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 - str "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex * string
+    temp = num1 * str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 * str "
+    << std::setw(13) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex / string
+    temp = num1 / str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = num1 / str "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex += string
+    temp = num1;
+    temp += str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp += str "
+    << std::setw(20) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex -= string
+    temp = num1;
+    temp -= str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp -= str "
+    << std::setw(20) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex *= float
+    temp = num1;
+    temp *= str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp *= str "
+    << std::setw(19) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // complex /= float
+    temp = num1;
+    temp /= str;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp /= str "
+    << std::setw(20) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl
+    << "--------------------------------------------" << std::endl << std::endl;
+
+
+    std::cout << BOLD_YELLOW << "------- "
+    << BOLD_BLEU << "operator string with complex"
+    << BOLD_YELLOW << " -------" << std::endl;
+
+
+    // string + complex
+    temp = str + num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = str + num1 "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // string - complex
+    temp = str - num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = str - num1 "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // string * complex
+    temp = str * num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = str * num1 "
+    << std::setw(13) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl;
+
+
+    // string / complex
+    temp = str / num1;
+    std::cout << "|    " << WHITE
+    << std::setw(9) << "temp = str / num1 "
+    << std::setw(14) << temp
+    << std::setw(14) << BOLD_YELLOW << "|" << std::endl
     << "--------------------------------------------" << std::endl << std::endl;
     return 0;
 }
